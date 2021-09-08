@@ -1,0 +1,5 @@
+# Project exclude paths
+/com.model/target/
+/com.order/target/
+/com.user/target/
+/InterfaceSDK/target/
