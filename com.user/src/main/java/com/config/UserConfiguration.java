@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @EnableDubbo(scanBasePackages = "com.user.impl")
-@ComponentScan(basePackages = {"com.processor","com.user.impl"})
+@ComponentScan(basePackages = {"com.processor", "com.user.impl"})
 public class UserConfiguration {
 
     @Bean
@@ -23,14 +23,14 @@ public class UserConfiguration {
     }
 
     @Bean
-    public RegistryConfig registryConfig(){
+    public RegistryConfig registryConfig() {
         RegistryConfig registryConfig = new RegistryConfig();
         registryConfig.setAddress("zookeeper://localhost:2181");
         return registryConfig;
     }
 
     @Bean
-    public ProtocolConfig protocolConfig(){
+    public ProtocolConfig protocolConfig() {
         ProtocolConfig protocolConfig = new ProtocolConfig();
         protocolConfig.setName("dubbo");
         protocolConfig.setPort(20880);

@@ -5,7 +5,7 @@ import models.User;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.apache.dubbo.config.annotation.Service;
 
-@DubboService(timeout = 3000,version = "1.0.0")
+@DubboService(timeout = 3000, version = "1.0.0")
 public class UserServiceImpl implements UserService {
     @Override
     public boolean add(User user) {

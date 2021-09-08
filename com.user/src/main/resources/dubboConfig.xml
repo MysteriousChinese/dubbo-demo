@@ -22,10 +22,10 @@
     <!--注册的服务接口-->
     <dubbo:service
             interface="com.interfaceSDK.api.UserService"
-            ref="userService"  />
+            ref="userService"/>
     <!--Bean bean定义-->
     <bean id="userService" class="com.user.impl.UserServiceImpl"/>
 
     <!--调用的服务接口-->
-    <dubbo:reference id="orderService" interface="com.interfaceSDK.api.OrderService"  />
+    <dubbo:reference id="orderService" interface="com.interfaceSDK.api.OrderService" check="false"/>
 </beans>

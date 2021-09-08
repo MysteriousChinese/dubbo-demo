@@ -42,14 +42,13 @@ public class AppTest {
     public void shouldAnswerWithTrue() throws Exception {
 
         //注解方式
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(UserConfiguration.class);
+       /* AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(UserConfiguration.class);
         context.start();
-        System.in.read();
+        System.in.read();*/
 
         //xml配置方式
-        /*ClassPathXmlApplicationContext context1 = new ClassPathXmlApplicationContext("dubboConfig.xml");
-        OrderService orderService = context1.getBean("orderService", OrderService.class);
-        String path = "/test";
+        ClassPathXmlApplicationContext context1 = new ClassPathXmlApplicationContext("dubboConfig.xml");
+       /* String path = "/test";
         if (curatorFramework.checkExists().forPath(path) == null) {
             curatorFramework.create().creatingParentContainersIfNeeded().forPath(path);
         }
@@ -64,13 +63,16 @@ public class AppTest {
             if (orderService != null && content.equals("order")) {
                 System.out.println("=====================>" + orderService);
             }
-        });
+        });*/
         context1.start();
-        System.in.read();
 
         OrderService orderService1 = context1.getBean("orderService", OrderService.class);
         List<Order> orders = orderService1.queryOrderByUserId(1);
-        orders.forEach(i -> System.out.println(i.getOrderId()));*/
+        orders.forEach(i -> System.out.println("================" + i.getOrderId()));
+
+        System.in.read();
+
+
     }
 
 

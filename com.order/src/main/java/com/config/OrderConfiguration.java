@@ -1,8 +1,6 @@
 package com.config;
 
-import org.apache.dubbo.config.ApplicationConfig;
-import org.apache.dubbo.config.ProtocolConfig;
-import org.apache.dubbo.config.RegistryConfig;
+import org.apache.dubbo.config.*;
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -10,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 @Configuration
-@EnableDubbo(scanBasePackages = "com.order")
+@EnableDubbo(scanBasePackages = "com.order.impl")
 @ComponentScan(basePackages = {"com.order"})
 public class OrderConfiguration {
     @Bean
@@ -24,14 +22,14 @@ public class OrderConfiguration {
     }
 
     @Bean
-    public RegistryConfig registryConfig(){
+    public RegistryConfig registryConfig() {
         RegistryConfig registryConfig = new RegistryConfig();
         registryConfig.setAddress("zookeeper://localhost:2181");
         return registryConfig;
     }
 
     @Bean
-    public ProtocolConfig protocolConfig(){
+    public ProtocolConfig protocolConfig() {
         ProtocolConfig protocolConfig = new ProtocolConfig();
         protocolConfig.setName("dubbo");
         protocolConfig.setPort(20881);

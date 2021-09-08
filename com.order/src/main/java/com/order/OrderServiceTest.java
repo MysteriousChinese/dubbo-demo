@@ -9,11 +9,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class OrderServiceTest {
-    @DubboReference(version = "1.0.0",check = false)
+    @DubboReference(version = "1.0.0", check = false)
     private UserService userService;
 
     public void hello() {
-        if(userService != null){
+        if (userService != null) {
             System.out.println(userService.hello("版本"));
         }
 
